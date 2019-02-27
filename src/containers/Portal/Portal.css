@@ -1,0 +1,31 @@
+.Portal header {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: purple;
+}
+
+.Portal ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+}
+
+
+.Portal li {
+    display: inline-block;
+    margin: 20px;
+}
+
+.Portal a {
+    text-decoration: none;
+    color: yellow;
+}
+
+.Portal a:hover,
+.Portal a:active,
+.Portal a.active {
+    color: white;
+}
