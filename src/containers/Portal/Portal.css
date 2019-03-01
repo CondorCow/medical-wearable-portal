@@ -1,3 +1,7 @@
+.Portal {
+    background-color: gainsboro;
+    height: 100vh;
+}
 .Portal header {
     margin: 0;
     padding: 0;

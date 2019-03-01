@@ -1,0 +1,18 @@
+.Measurement {
+    background-color: purple;
+    color: white;
+    cursor: pointer;
+    margin: 15px;
+    padding: 15px 15px 15px 0;
+    border-radius: 10px;
+}
+
+.Measurement svg {
+    float: right;
+    margin: 0 0 0 10px ;
+}
+
+/* .Measurement.expanded {
+    background-color: purple;
+    color: white;
+} */

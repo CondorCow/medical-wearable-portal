@@ -1,0 +1,39 @@
+.Clients {
+    /* background-color: purple; */
+    margin-top: 30px;
+    height: 85vh;
+    display: flex;
+}
+
+.Clients .ClientsTitle {
+    margin: 0 15px 0 30px;
+    padding: 15px 0 0 0;
+    text-indent: 15px;
+    background-color: purple;
+    color: white;
+    width: calc(100% /3);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 1px 1px 10px gray;
+}
+
+.Clients .ClientsList {
+    padding-top: 15px;
+    background-color: white;
+    height: 100%;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.Clients .MeasurementHistory {
+    margin: 0 30px 0 15px;
+    padding: 15px 0 0 0;
+    text-indent: 15px;
+    background-color: purple;
+    color: white;
+    width: calc(100% /3);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 1px 1px 10px gray;
+    flex: 1;
+}

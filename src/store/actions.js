@@ -1,0 +1,3 @@
+export const CHANGE_NAME = 'CHANGE_NAME'
+export const INIT_CLIENTS = 'INIT_CLIENTS'
+export const ON_CLIENT_SELECT = 'ON_CLIENT_SELECT'

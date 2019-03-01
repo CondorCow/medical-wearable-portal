@@ -1,0 +1,13 @@
+.Client {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    margin: 15px;
+    padding: 1px;
+    border-radius: 10px;
+}
+
+.Client.selected {
+    background-color: purple;
+    color: white;
+}
