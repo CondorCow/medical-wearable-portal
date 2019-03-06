@@ -15,20 +15,36 @@ class Measurement extends Component {
 
     render() {
         let icons = this.props.measurements[1].map(measurement => {
-            switch(measurement.measurementTypeId.identifier) {
+            return <Icon key={measurement._id} icon={measurement.measurementTypeId.identifier} />
+        });
+
+        const expandedView = this.props.measurements[1].map(measurement => {
+            switch (measurement.measurementTypeId.identifier) {
                 case 'heartrate':
-                    return <Icon icon="heartrate"/>
+                    return (
+                        <div>
+                            <Icon icon="heartrate" />
+                            {measurement.values[0].value}
+                        </div>
+                    );
                 case 'bloodpressure':
-                    return <Icon icon="bloodpressure"/>
+                    let values = measurement.values.map(v => {
+                        return v.value
+                    })
+                    return (<div>
+                        <Icon icon="bloodpressure" />
+                        {values}
+                    </div>);
             }
         });
+        console.log(expandedView);
 
         return (
             <div className="Measurement" onClick={this.onExpandHandler.bind(this)}>
                 {Moment(this.props.measurements[0]).format('DD-MM-YYYY')}
                 {icons}
                 {this.state.expanded ?
-                    <div>expanded</div>
+                    expandedView
                     : null
                 }
             </div>

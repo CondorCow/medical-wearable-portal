@@ -1,0 +1,53 @@
+.Container {
+    padding-top: 15px;
+    background-color: white;
+    color: black;
+    height: 100%;
+    margin-top: 15px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.Input{
+    display:block;
+    width: 300px;
+    padding: 5px 0 5px 0px;
+    margin: 5px 30px 0 30px;    
+    border: none;
+    outline: none;
+    color: black;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 4px;
+    text-indent: 12px;
+    font-size: 13px;
+}
+
+.Submit {
+    margin: 30px;
+    padding: 10px;
+    width: 300px;
+    background-color: purple;
+    color: white;
+    font-size: 24px;
+}
+
+.Label {
+    margin: 30px;
+}
+
+.Icon {
+    background-color: purple;
+    margin-left: 30px;
+    align-items: center;
+    align-content: center;
+    border-radius: 15px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+}
+
+img {
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+}

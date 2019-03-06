@@ -4,6 +4,7 @@ import './Portal.css';
 import { Link, Route, Switch } from 'react-router-dom';
 
 import Clients from '../Clients/Clients';
+import MeasurementTypeOverview from '../MeasurementOverview/MeasurementTypeOverview'
 
 class Portal extends Component {
     render() {
@@ -19,7 +20,7 @@ class Portal extends Component {
                 </header>
                 <Switch>
                     <Route path="/" exact component={Clients} />
-                    <Route path="/meting-types" render={() => <h1>Meting types</h1>} />
+                    <Route path="/meting-types" component={MeasurementTypeOverview} />
                 </Switch>
             </div>
         );
