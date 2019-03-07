@@ -17,6 +17,7 @@ class Clients extends Component {
         if (this.props.clients.length !== null) {
             this.loadClients();
         }
+        console.log(this.props);
     }
 
     loadClients() {

@@ -51,7 +51,7 @@ class MeasurementTypeOverview extends Component {
                     <div className="List">{loadedMeasurementTypes}</div>
                 </div>
                 <div className="Form">
-                    Nieuwe meting type toevoegen
+                    Nieuw meting type toevoegen
                     <MeasurementTypeForm />
                 </div>
             </div>

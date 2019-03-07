@@ -9,13 +9,15 @@ import {Provider} from 'react-redux';
 
 import clientReducer from './store/reducers/clientReducer';
 import measurementReducer from './store/reducers/measurementReducer';
+import authReducer from './store/reducers/authReducer';
 
 const rootReducer = combineReducers({
     client: clientReducer,
-    measurement: measurementReducer
+    measurement: measurementReducer,
+    auth: authReducer
 });
 
-const store = createStore(rootReducer);
+export const store = createStore(rootReducer);
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 

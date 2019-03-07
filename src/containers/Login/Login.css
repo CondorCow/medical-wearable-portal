@@ -1,0 +1,36 @@
+.Login {
+    padding-top: 15px;
+    background-color: white;
+    color: black;
+    height: 60vh;
+    margin: auto;
+    width: 70vh;   
+    border-radius: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.Login.input{
+    width: 300px;
+    padding: 5px 0 5px 0px;
+    border: none;
+    outline: none;
+    color: black;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 4px;
+    text-indent: 12px;
+    font-size: 13px;
+}
+
+.Login.submit {
+    width: 300px;
+    background-color: purple;
+    color: white;
+    font-size: 24px;
+}
+
+.Login.errors {
+    color: red;
+    text-indent: 30px;
+}
