@@ -18,8 +18,9 @@ class Login extends Component {
     };
 
     componentDidMount() {
-        // this.props.history.push({pathname: '/clients'})
-        if (this.props.isAuth) {
+        if (this.props.shouldLogout) {
+            this.props.onLogout();
+        } else if (this.props.isAuth) {
             this.props.history.push({ pathname: '/clients' })
         }
     }
@@ -112,7 +113,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onLogin: (token) => dispatch({ type: actionTypes.ON_LOGIN, value: token })
+        onLogin: (token) => dispatch({ type: actionTypes.ON_LOGIN, value: token }),
+        onLogout: () => dispatch({ type: actionTypes.ON_LOGOUT })
     }
 }
 

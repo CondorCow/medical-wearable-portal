@@ -9,9 +9,10 @@ const reducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.ON_LOGIN:
             axios.defaults.headers.common['Authorization'] = 'Bearer ' + action.value;
-            return {...state, isAuth: true}
+            return {...state, isAuth: true};
         case actionTypes.ON_LOGOUT:
-            return {...state, isAuth: false}
+            delete axios.defaults.headers.common['Authorization'];
+            return {...state, isAuth: false};
     }
     return state;
 };

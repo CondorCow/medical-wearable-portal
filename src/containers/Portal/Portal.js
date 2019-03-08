@@ -31,6 +31,7 @@ class Portal extends Component {
                     <Route path="/meting-types" component={store.getState().auth.isAuth ? MeasurementTypeOverview : Login} />
                     <Route path="/" exact component={Login} />
                     <Route path="/login" exact component={Login} />
+                    <Route path="/logout" exact render={(props) => <Login {...props} shouldLogout={true}/>} />
                 </Switch>
             </div>
         );
