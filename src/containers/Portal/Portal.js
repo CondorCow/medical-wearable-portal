@@ -8,9 +8,13 @@ import Clients from '../Clients/Clients';
 import MeasurementTypeOverview from '../MeasurementOverview/MeasurementTypeOverview';
 import Login from '../Login/Login'
 import { store } from '../../index';
+import axios from '../../axios';
 
 class Portal extends Component {
     render() {
+        if(localStorage.getItem('token') != null) {
+            axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token');
+        }   
         return (
             <div className="Portal">
                 <header>

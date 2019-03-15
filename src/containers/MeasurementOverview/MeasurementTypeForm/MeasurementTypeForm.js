@@ -99,6 +99,8 @@ class MeasurementTypeForm extends Component {
         axios.post('/admin/measurementTypes', postData).then(respose => {
             console.log(respose);
         });
+
+        event.preventDefault();
     }
 
     onAddSubValueHandler = () => {
