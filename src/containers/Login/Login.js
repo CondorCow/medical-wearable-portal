@@ -11,10 +11,11 @@ class Login extends Component {
     state = {
         email: '',
         password: '',
-        formErrors: { email: '', password: '' },
-        emailValid: false,
-        passwordValid: false,
-        formValid: false
+        // formErrors: { email: '', password: '' },
+        // emailValid: false,
+        // passwordValid: false,
+        // formValid: true
+        error: ''
     };
 
     componentDidMount() {
@@ -25,33 +26,33 @@ class Login extends Component {
         }
     }
 
-    validateField(fieldName, value) {
-        let fieldValidationErrors = this.state.formErrors;
-        let emailValid = this.state.emailValid;
-        let passwordValid = this.state.passwordValid;
+    // validateField(fieldName, value) {
+    //     let fieldValidationErrors = this.state.formErrors;
+    //     let emailValid = this.state.emailValid;
+    //     let passwordValid = this.state.passwordValid;
 
-        switch (fieldName) {
-            case 'email':
-                emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-                fieldValidationErrors.email = emailValid ? '' : ' is ongeldig';
-                break;
-            case 'password':
-                passwordValid = value.length > 0;
-                // fieldValidationErrors.password = passwordValid ? '' : ' is leeg';
-                break;
-            default:
-                break;
-        }
-        this.setState({
-            formErrors: fieldValidationErrors,
-            emailValid: emailValid,
-            passwordValid: passwordValid
-        }, this.validateForm);
-    }
+    //     switch (fieldName) {
+    //         case 'email':
+    //             emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+    //             fieldValidationErrors.email = emailValid ? '' : ' is ongeldig';
+    //             break;
+    //         case 'password':
+    //             passwordValid = value.length > 0;
+    //             // fieldValidationErrors.password = passwordValid ? '' : ' is leeg';
+    //             break;
+    //         default:
+    //             break;
+    //     }
+    //     this.setState({
+    //         formErrors: fieldValidationErrors,
+    //         emailValid: emailValid,
+    //         passwordValid: passwordValid
+    //     }, this.validateForm);
+    // }
 
-    validateForm() {
-        this.setState({ formValid: this.state.emailValid && this.state.passwordValid });
-    }
+    // validateForm() {
+    //     this.setState({ formValid: this.state.emailValid && this.state.passwordValid });
+    // }
 
     handleSubmit = event => {
         this.login();
@@ -69,7 +70,9 @@ class Login extends Component {
                 this.props.history.push({ pathname: '/clients' })
             }
         }).catch(err => {
-            console.log(err);
+            if(err.response.status == 401) {
+                this.setState({error: "Onjuiste gegevens ingevoerd"})
+            }
         });
     }
 
@@ -79,27 +82,29 @@ class Login extends Component {
 
         this.setState(
             { [name]: target.value },
-            () => { this.validateField(name, target.value) }
+            // () => { this.validateField(name, target.value) }
         );
     }
 
     render() {
         return (
-            <div className="Container">
-                <div className="Errors">
-                    <FormErrors formErrors={this.state.formErrors} />
+            <div className="Login">
+                <div className="Error">
+                    <label>
+                        {this.state.error}
+                    </label>
                 </div>
                 <form onSubmit={this.handleSubmit.bind(this)}>
-                    <label className="Label">
+                    <label>
                         Email
                     <input className="Input" name="email" type="text" onChange={this.handleInputChange.bind(this)} />
                     </label>
                     <br />
-                    <label className="Label">
+                    <label>
                         Wachtwoord
-                    <input className="Input" name="password" type="text" onChange={this.handleInputChange.bind(this)} />
+                    <input className="Input" name="password" type="password" onChange={this.handleInputChange.bind(this)} />
                     </label>
-                    <input className="Submit" type="submit" value="Login" disabled={!this.state.formValid} />
+                    <input className="Submit" type="submit" value="Login" />
                 </form>
             </div >);
     }

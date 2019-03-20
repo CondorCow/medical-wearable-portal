@@ -22,18 +22,16 @@ class Measurement extends Component {
             switch (measurement.measurementTypeId.identifier) {
                 case 'heartrate':
                     return (
-                        <div>
+                        <div className="Row">
                             <Icon icon="heartrate" />
                             {measurement.values[0].value}
                         </div>
                     );
                 case 'bloodpressure':
-                    let values = measurement.values.map(v => {
-                        return v.value
-                    })
-                    return (<div>
+                    let [bottom, top] = measurement.values.map(v => v.value);
+                    return (<div className="Row">
                         <Icon icon="bloodpressure" />
-                        {values}
+                        {top} / {bottom}
                     </div>);
             }
         });
@@ -41,10 +39,16 @@ class Measurement extends Component {
 
         return (
             <div className="Measurement" onClick={this.onExpandHandler.bind(this)}>
-                {Moment(this.props.measurements[0]).format('DD-MM-YYYY')}
-                {icons}
+                <div className="Header">
+                    {Moment(this.props.measurements[0]).format('DD-MM-YYYY')}
+                    <div className="float-right">
+                    {icons}
+                    </div>
+                </div>
                 {this.state.expanded ?
-                    expandedView
+                (<div className="Details">
+                    {expandedView}
+                    </div>)
                     : null
                 }
             </div>

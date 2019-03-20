@@ -100,7 +100,6 @@ class MeasurementTypeForm extends Component {
             console.log(respose);
         });
 
-        event.preventDefault();
     }
 
     onAddSubValueHandler = () => {

@@ -3,13 +3,38 @@
     color: white;
     cursor: pointer;
     margin: 15px;
-    padding: 15px 15px 15px 0;
+    padding: 15px;
     border-radius: 10px;
 }
 
-.Measurement svg {
+.Measurement .float-right {
     float: right;
-    margin: 0 0 0 10px ;
+    margin: 0 0 0 10px;
+}
+
+.Measurement .float-right svg{
+    margin: 0 0 0 6px;
+}
+
+.Measurement .Row {
+    line-height: 24px;
+}
+
+.Measurement .Row svg {
+    width: 24px;
+    margin-right: 10px;
+    margin-bottom: -5px;
+}
+
+.Measurement .Details {
+    margin-top: 10px;
+    border-top: 1px white solid;
+    padding-top: 10px;
+
+}
+
+.Measurement .Header {
+    text-indent: 0;
 }
 
 /* .Measurement.expanded {

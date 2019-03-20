@@ -37,6 +37,7 @@ class Clients extends Component {
                 this.props.onClientSelected(clientNumber, response.data.measurements)
             }).catch(err => {
                 console.log(err);
+                this.setState({error: true})
                 this.props.onClientSelected(clientNumber, null)
             });
     }

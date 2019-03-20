@@ -1,21 +1,25 @@
 .Login {
-    padding-top: 15px;
+    padding: 15px;
     background-color: white;
     color: black;
-    height: 60vh;
     margin: auto;
-    width: 70vh;   
+    margin-top: 30px;
+    width: 400px;
     border-radius: 10px;
-    align-items: center;
+    position: relative;
+    height: 40vh;
     display: flex;
+    align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
-.Login.input{
-    width: 300px;
-    padding: 5px 0 5px 0px;
+.Login .Input{
+    width: 100%;
+    margin: 0;
     border: none;
     outline: none;
+    box-sizing: border-box;
     color: black;
     border: 1px solid rgba(0,0,0,0.3);
     border-radius: 4px;
@@ -23,14 +27,18 @@
     font-size: 13px;
 }
 
-.Login.submit {
+.Login label {
+    width: 100%;
+}
+
+.Login .Submit {
     width: 300px;
     background-color: purple;
     color: white;
     font-size: 24px;
+    margin: 30px 30px 0 30px;
 }
 
-.Login.errors {
+.Login .Error {
     color: red;
-    text-indent: 30px;
 }
